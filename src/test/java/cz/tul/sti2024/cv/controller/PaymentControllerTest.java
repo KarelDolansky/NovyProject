@@ -32,7 +32,7 @@ public class PaymentControllerTest {
     void testPayment() throws IOException {
         PaymentController paymentController = new PaymentController();
         String payload = Files.readString(new ClassPathResource("inputdata/input_valid.json").getFile().toPath());
-        paymentController.paymentProcesing(payload);
-        Assertions.assertEquals(10, 10);
+        Assertions.assertEquals("Payment processed successfully!", paymentController.paymentProcessing(payload));
+        Assertions.assertEquals("Payment processing failed!", paymentController.paymentProcessing("invalid json"));
     }
 }
