@@ -32,6 +32,7 @@ public class PaymentController {
             paymentProcessingHandler.processPayment(payload);
             return "Payment accepted";
         }catch(JsonProcessingException jsonProcessingException){
+            
             return "Payment rejected";
         }
     }
